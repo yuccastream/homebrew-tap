@@ -1,0 +1,11 @@
+---
+os: osx
+
+language: ruby
+
+before_script:
+  - brew tap yuccastream/tap
+
+script:
+  - brew install yucca --without-docker --without-ffmpeg
+  - yucca version
