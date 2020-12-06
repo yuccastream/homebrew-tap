@@ -7,5 +7,5 @@ before_script:
   - brew tap yuccastream/tap
 
 script:
-  - brew install yucca --without-docker --without-ffmpeg
+  - brew install yucca --ignore-dependencies
   - yucca version
