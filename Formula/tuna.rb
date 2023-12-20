@@ -9,9 +9,9 @@ class Tuna < Formula
   license "Copyright YuccaStream Team (https://tuna.am/tos.html)"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_darwin_arm64.tar.gz"
-      sha256 "2e38ae268bd36e432c9c8dc367c940db791fd4969e21a50b5997ffb42bb8974f"
+    if Hardware::CPU.intel?
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_darwin_amd64.tar.gz"
+      sha256 "e0387e9a446b4b7887ad8b05c5169414f76f0b39b580376d7a6b3efe9afff8fa"
 
       def install
         bin.install "tuna"
@@ -20,9 +20,9 @@ class Tuna < Formula
         fish_completion.install "completions/tuna.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_darwin_amd64.tar.gz"
-      sha256 "46b630ff05084d4a9afa8cfcd0f892651a9de1602332dc361a92e138ac19c192"
+    if Hardware::CPU.arm?
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_darwin_arm64.tar.gz"
+      sha256 "881dec9a1331ba362a3d261f6eb504c442265b4c5edb5ad8611b2bac6e18dce3"
 
       def install
         bin.install "tuna"
@@ -36,18 +36,7 @@ class Tuna < Formula
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_linux_arm.tar.gz"
-      sha256 "ec4d48fc4b25848f98448fe2cc680bf7519f57b761b0f0a452fff69c362b5552"
-
-      def install
-        bin.install "tuna"
-        bash_completion.install "completions/tuna.bash" => "tuna"
-        zsh_completion.install "completions/tuna.zsh" => "_tuna"
-        fish_completion.install "completions/tuna.fish"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_linux_arm64.tar.gz"
-      sha256 "7a28d0735d018f51db0002223dfe977cb18d2a38c9b6eb286eec1f90e00fbacb"
+      sha256 "094059c16b1e697b4f50519c9e3abbb94f64d0e9ff1e5d11e77413b829729061"
 
       def install
         bin.install "tuna"
@@ -58,7 +47,18 @@ class Tuna < Formula
     end
     if Hardware::CPU.intel?
       url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_linux_amd64.tar.gz"
-      sha256 "127799c2b0645fa8349fe2ea95711acf3d5f1223061ec53fb173cd0a1ee6eb66"
+      sha256 "fd9a9684275e14b329fc1e17f6df43bcdec37e6ac133604274246b89d7b03d7a"
+
+      def install
+        bin.install "tuna"
+        bash_completion.install "completions/tuna.bash" => "tuna"
+        zsh_completion.install "completions/tuna.zsh" => "_tuna"
+        fish_completion.install "completions/tuna.fish"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta1/tuna_0.15.1-beta1_linux_arm64.tar.gz"
+      sha256 "43bed8aa2ac493d9a861e12d4bc178dca9c8c2c59e9d90b0606fe59cf7444ce2"
 
       def install
         bin.install "tuna"
