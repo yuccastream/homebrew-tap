@@ -5,66 +5,66 @@
 class Tuna < Formula
   desc "Tuna - software for create HTTP/TCP tunnels to local network"
   homepage "https://tuna.am"
-  version "0.15.1-beta5"
+  version "0.15.1-beta6"
   license "Copyright YuccaStream Team (https://tuna.am/tos.html)"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta5/tuna_0.15.1-beta5_darwin_amd64.tar.gz"
-      sha256 "5932ed9759667d4a3dffacc723e55872dd4c29d9898ef38cb5ea70c09461ef69"
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta6/tuna_0.15.1-beta6_darwin_amd64.tar.gz"
+      sha256 "0574aba1e5d29f8cbca7619ed4e7f783cee7480c4f05fd6064b923b2407ea6ca"
 
       def install
         bin.install "tuna"
-        bash_completion.install "tuna" => "tuna completion bash"
-        zsh_completion.install "tuna" => "tuna completion zsh"
-        fish_completion.install "tuna" => "tuna completion fish"
+        (bash_completion/"tuna.sh").write `#{bin}/tuna completion bash`
+        (zsh_completion/"_tuna").write `#{bin}/tuna completion zsh`
+        (fish_completion/"tuna.fish").write `#{bin}/tuna completion fish`
       end
     end
     if Hardware::CPU.arm?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta5/tuna_0.15.1-beta5_darwin_arm64.tar.gz"
-      sha256 "0068add7e8e51faa29595c18a388a5a2c3238984ee604bc6560c3b113624b9cf"
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta6/tuna_0.15.1-beta6_darwin_arm64.tar.gz"
+      sha256 "2a182ca0352c3ae85979e9440808771d7cb10c18e4df448c8cc31722913141e2"
 
       def install
         bin.install "tuna"
-        bash_completion.install "tuna" => "tuna completion bash"
-        zsh_completion.install "tuna" => "tuna completion zsh"
-        fish_completion.install "tuna" => "tuna completion fish"
+        (bash_completion/"tuna.sh").write `#{bin}/tuna completion bash`
+        (zsh_completion/"_tuna").write `#{bin}/tuna completion zsh`
+        (fish_completion/"tuna.fish").write `#{bin}/tuna completion fish`
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta5/tuna_0.15.1-beta5_linux_arm.tar.gz"
-      sha256 "b3c789ad7926895e56d9c7071e67ec6d9e5a38dc88837f37d211a9cfc0a73c9a"
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta6/tuna_0.15.1-beta6_linux_arm.tar.gz"
+      sha256 "3c308f7f8bce94bb663b3f2f051393dc3c8a10974af0da9f39f101b4ba16d508"
 
       def install
         bin.install "tuna"
-        bash_completion.install "tuna" => "tuna completion bash"
-        zsh_completion.install "tuna" => "tuna completion zsh"
-        fish_completion.install "tuna" => "tuna completion fish"
+        (bash_completion/"tuna.sh").write `#{bin}/tuna completion bash`
+        (zsh_completion/"_tuna").write `#{bin}/tuna completion zsh`
+        (fish_completion/"tuna.fish").write `#{bin}/tuna completion fish`
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta5/tuna_0.15.1-beta5_linux_arm64.tar.gz"
-      sha256 "7037e44977b6e1ce320ad37c564e24c672a8656c8dc801e3750684387340b16a"
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta6/tuna_0.15.1-beta6_linux_arm64.tar.gz"
+      sha256 "b77c072029a80535108db5cc7576f341e600cf448368089e2e223ee5f677e0d3"
 
       def install
         bin.install "tuna"
-        bash_completion.install "tuna" => "tuna completion bash"
-        zsh_completion.install "tuna" => "tuna completion zsh"
-        fish_completion.install "tuna" => "tuna completion fish"
+        (bash_completion/"tuna.sh").write `#{bin}/tuna completion bash`
+        (zsh_completion/"_tuna").write `#{bin}/tuna completion zsh`
+        (fish_completion/"tuna.fish").write `#{bin}/tuna completion fish`
       end
     end
     if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta5/tuna_0.15.1-beta5_linux_amd64.tar.gz"
-      sha256 "d5e4efd7ac8fc951cdb6287c141823754ef0497c785d59a0121e2263adee4878"
+      url "https://releases.tuna.am/tuna/beta/v0.15.1-beta6/tuna_0.15.1-beta6_linux_amd64.tar.gz"
+      sha256 "fb9c8cb08bbf805ef66d2bf8e3d696934b3437cb5482b020ad671ec3aeb36176"
 
       def install
         bin.install "tuna"
-        bash_completion.install "tuna" => "tuna completion bash"
-        zsh_completion.install "tuna" => "tuna completion zsh"
-        fish_completion.install "tuna" => "tuna completion fish"
+        (bash_completion/"tuna.sh").write `#{bin}/tuna completion bash`
+        (zsh_completion/"_tuna").write `#{bin}/tuna completion zsh`
+        (fish_completion/"tuna.fish").write `#{bin}/tuna completion fish`
       end
     end
   end
