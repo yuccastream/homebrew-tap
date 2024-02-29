@@ -5,21 +5,21 @@
 class Tuna < Formula
   desc "Tuna - software for create HTTP/TCP tunnels to local network"
   homepage "https://tuna.am"
-  version "0.15.6"
+  version "0.15.7"
   license "Copyright YuccaStream Team (https://tuna.am/tos.html)"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://releases.tuna.am/tuna/v0.15.6/tuna_0.15.6_darwin_arm64.tar.gz"
-      sha256 "5cdd25520c4283efbebc8b433c5203bbb03ddab31994b5ae184968547b0696ed"
+    if Hardware::CPU.intel?
+      url "https://releases.tuna.am/tuna/v0.15.7/tuna_0.15.7_darwin_amd64.tar.gz"
+      sha256 "8bf1ca8b7cf127e7207325ef2b5afa8d80d0637f09791516f0ce58e27f374001"
 
       def install
         bin.install "tuna"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/v0.15.6/tuna_0.15.6_darwin_amd64.tar.gz"
-      sha256 "0a43b28b34975933b053b2c117d5fa8c38cabd5cdd4c7251b6b81c69889700a9"
+    if Hardware::CPU.arm?
+      url "https://releases.tuna.am/tuna/v0.15.7/tuna_0.15.7_darwin_arm64.tar.gz"
+      sha256 "fb7d3d3bfd6ebe754820bc3c2d6399e0da0e08fba1c1a79be3bf2dc6220536fa"
 
       def install
         bin.install "tuna"
@@ -29,24 +29,24 @@ class Tuna < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://releases.tuna.am/tuna/v0.15.6/tuna_0.15.6_linux_arm.tar.gz"
-      sha256 "53958d6279c75b877ec71af415840cec4dc3899d1c0fee2f847d293bcb1e496f"
-
-      def install
-        bin.install "tuna"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/v0.15.6/tuna_0.15.6_linux_amd64.tar.gz"
-      sha256 "6c75f3aab807dcb7b2027dff70a5f8ba66110b8720819699c87fb74f8c8dec89"
+      url "https://releases.tuna.am/tuna/v0.15.7/tuna_0.15.7_linux_arm.tar.gz"
+      sha256 "b43f6dd2dd53eec4d15c4b5a168000d74c73af9cf705622aa6a822b362aa87a9"
 
       def install
         bin.install "tuna"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.tuna.am/tuna/v0.15.6/tuna_0.15.6_linux_arm64.tar.gz"
-      sha256 "1f6fb137c12cf042a83cb249b18c447f93638233ee5d4d72da1993f4a9841db4"
+      url "https://releases.tuna.am/tuna/v0.15.7/tuna_0.15.7_linux_arm64.tar.gz"
+      sha256 "6e9d3f8b9ed02152b1ee4a220c1f8c3143fe7a697896a322263f379b369bc673"
+
+      def install
+        bin.install "tuna"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://releases.tuna.am/tuna/v0.15.7/tuna_0.15.7_linux_amd64.tar.gz"
+      sha256 "75402f693359539a6652f8038b66d288df34d90d1ed5e4a2eaa5cfe9950ad700"
 
       def install
         bin.install "tuna"
