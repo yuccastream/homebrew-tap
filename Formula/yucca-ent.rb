@@ -11,7 +11,7 @@ class YuccaEnt < Formula
   on_macos do
     on_intel do
       url "https://releases.tuna.am/v0.10.1/yucca-ent_0.10.1_darwin_amd64.tar.gz"
-      sha256 "987813dac9f2c8e204370073bce96f1be08d54c4753a37a049bff839a170c122"
+      sha256 "318d2063d65d0e29634f2ca11497556bc19554cc6be96c948b97a4c84254c47a"
 
       def install
         bin.install "yucca"
@@ -19,7 +19,7 @@ class YuccaEnt < Formula
     end
     on_arm do
       url "https://releases.tuna.am/v0.10.1/yucca-ent_0.10.1_darwin_arm64.tar.gz"
-      sha256 "86622bf67474dc02fab6b8373488d327920221f2d8e2e5f3f18a939092a1aa53"
+      sha256 "4d32ea3537956dedbdff4369ec66135858733fc867df397284a3cceefe8c2ab1"
 
       def install
         bin.install "yucca"
@@ -31,7 +31,7 @@ class YuccaEnt < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://releases.tuna.am/v0.10.1/yucca-ent_0.10.1_linux_amd64.tar.gz"
-        sha256 "a77d5b8d80edb43152eec5a7b908d0acd8e6d8f7e1df0b05e07acfba6b7bbd0d"
+        sha256 "5a8ba9d835e457abd4a4b0d16e44c4173b517886cf83815dd790c643341fd10e"
 
         def install
           bin.install "yucca"
@@ -41,7 +41,7 @@ class YuccaEnt < Formula
     on_arm do
       if !Hardware::CPU.is_64_bit?
         url "https://releases.tuna.am/v0.10.1/yucca-ent_0.10.1_linux_arm.tar.gz"
-        sha256 "87d1cf0a4dc925df7a49035ff7c13a1ad14f040c982aae9f53144da0ca25bec4"
+        sha256 "af390e50ddca4e2bf0c43fbebbb8f7dc283a9fbc6707940059a530009b7ec82a"
 
         def install
           bin.install "yucca"
@@ -51,7 +51,7 @@ class YuccaEnt < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://releases.tuna.am/v0.10.1/yucca-ent_0.10.1_linux_arm64.tar.gz"
-        sha256 "38797f39dd72b23a98f212863927e3efa49ef0606efe929ee58d9f5a0eacc0cf"
+        sha256 "72b9e6ca5e7456591b5c6cd697f5c8f34d60305725f5fee10cd00b190e25881c"
 
         def install
           bin.install "yucca"
