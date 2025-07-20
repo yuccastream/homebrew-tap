@@ -5,21 +5,21 @@
 class YuccaEnt < Formula
   desc "Yucca - simple NVR CCTV solution (enterprise edition)"
   homepage "https://yucca.app"
-  version "0.10.2"
+  version "0.11.3"
   license "Copyright YuccaStream Team (https://yucca.app/en/terms)"
 
   on_macos do
-    on_intel do
-      url "https://releases.tuna.am/v0.10.2/yucca-ent_0.10.2_darwin_amd64.tar.gz"
-      sha256 "9d3a7b9fd125434d2987e155622d4e57af7ae9a97528d80807df1ee5e187af13"
+    if Hardware::CPU.intel?
+      url "https://releases.yucca.app/v0.11.3/yucca-ent_0.11.3_darwin_amd64.tar.gz"
+      sha256 "ef255d6634480ded7362596b9f5efa2569a414baa5ad22960b111bc1a7810e2b"
 
       def install
         bin.install "yucca"
       end
     end
-    on_arm do
-      url "https://releases.tuna.am/v0.10.2/yucca-ent_0.10.2_darwin_arm64.tar.gz"
-      sha256 "12f439de609880ae47a146d21c4fdbac634dde9fa01a9a4457888cc1aac3e5c9"
+    if Hardware::CPU.arm?
+      url "https://releases.yucca.app/v0.11.3/yucca-ent_0.11.3_darwin_arm64.tar.gz"
+      sha256 "5e09c89858dc362869fecac0f3c96212fa8688ac16b2b488c0a06c6c13d79cbe"
 
       def install
         bin.install "yucca"
@@ -28,30 +28,30 @@ class YuccaEnt < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/v0.10.2/yucca-ent_0.10.2_linux_amd64.tar.gz"
-        sha256 "96a4e0a48f0d67deefc33181e178de374522ab548f1386217e31c7cc7e68297f"
+        url "https://releases.yucca.app/v0.11.3/yucca-ent_0.11.3_linux_amd64.tar.gz"
+        sha256 "72337029211b62cf5d35f6414712ceb5bb701c73d7fbf7d85368a9444adba3c8"
 
         def install
           bin.install "yucca"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/v0.10.2/yucca-ent_0.10.2_linux_arm.tar.gz"
-        sha256 "a25fbc120e7df70e833e4e7067f3d4706dd982b254749222f597dc745fa7ed5c"
+        url "https://releases.yucca.app/v0.11.3/yucca-ent_0.11.3_linux_arm.tar.gz"
+        sha256 "07acf5b3297390aaf63fe64ab1729565baa4411c0ba2f2c08cd034b0ede2a6e5"
 
         def install
           bin.install "yucca"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/v0.10.2/yucca-ent_0.10.2_linux_arm64.tar.gz"
-        sha256 "e15b8c836910bb25e22083412ce5c4ab5fea0cbe0c4e6bca608bfe1abc3413dd"
+        url "https://releases.yucca.app/v0.11.3/yucca-ent_0.11.3_linux_arm64.tar.gz"
+        sha256 "6023a9190ff2ff4b7507a5b726444e54bc7b3bfc9d59c33771c6e1e893c49700"
 
         def install
           bin.install "yucca"
