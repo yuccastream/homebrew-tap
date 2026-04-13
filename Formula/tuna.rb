@@ -5,21 +5,21 @@
 class Tuna < Formula
   desc "Tuna - software for create HTTP/TCP/SSH tunnels to local network"
   homepage "https://tuna.am"
-  version "0.32.0"
+  version "0.33.0"
   license "proprietary"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://releases.tuna.am/tuna/v0.32.0/tuna_0.32.0_darwin_amd64.tar.gz"
-      sha256 "d0032cc04f4fd0057da8b1b6ed26d9da37dda875163e60236847dc81577d2426"
+      url "https://releases.tuna.am/tuna/v0.33.0/tuna_0.33.0_darwin_amd64.tar.gz"
+      sha256 "a4ce927733201a3ccf09bc722f698985e6c314e1b8f1febdef6c1c8942d53534"
 
       def install
         bin.install "tuna"
       end
     end
     if Hardware::CPU.arm?
-      url "https://releases.tuna.am/tuna/v0.32.0/tuna_0.32.0_darwin_arm64.tar.gz"
-      sha256 "d2a959c7f11cf5836c3f4e0661736b71868f50fe01e4c8f0ef0eb0c0ca9b5631"
+      url "https://releases.tuna.am/tuna/v0.33.0/tuna_0.33.0_darwin_arm64.tar.gz"
+      sha256 "866e4f2b18849096a013853a842a1541a5d10e8ef1be987157eafdc0ad68f283"
 
       def install
         bin.install "tuna"
@@ -30,8 +30,8 @@ class Tuna < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/tuna/v0.32.0/tuna_0.32.0_linux_amd64.tar.gz"
-        sha256 "7badc87c76c1db0f935acf2ab4f04a551046121eab20c0332bf3436833a0ef46"
+        url "https://releases.tuna.am/tuna/v0.33.0/tuna_0.33.0_linux_amd64.tar.gz"
+        sha256 "7246d9d74f9de248b1a6aaa4c4f208f2dfa4fc8e2adcd06254a58e6bcd717741"
 
         def install
           bin.install "tuna"
@@ -40,8 +40,8 @@ class Tuna < Formula
     end
     if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/tuna/v0.32.0/tuna_0.32.0_linux_armv7.tar.gz"
-        sha256 "43d98fb68b531170fbab70443f7acf476332a5a56acf720a805ec9a5e6c24937"
+        url "https://releases.tuna.am/tuna/v0.33.0/tuna_0.33.0_linux_armv7.tar.gz"
+        sha256 "a96e97531b9165cf131af9cf9fe515cd6eb9defd001c7787a37f29b48a5ff251"
 
         def install
           bin.install "tuna"
@@ -50,8 +50,8 @@ class Tuna < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.tuna.am/tuna/v0.32.0/tuna_0.32.0_linux_arm64.tar.gz"
-        sha256 "9b0708ba4c1f9c0bd9291ba150cf9918e359807ef228a1f69a7c7a47e6edc7f5"
+        url "https://releases.tuna.am/tuna/v0.33.0/tuna_0.33.0_linux_arm64.tar.gz"
+        sha256 "c532f8d9b742a7c3f34fb9822c24e0b36bf8e7a81ebbd79648d2209148c89f79"
 
         def install
           bin.install "tuna"
